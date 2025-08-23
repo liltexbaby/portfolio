@@ -30,6 +30,10 @@ jobs:
         working-directory: portfolio-v2
         run: npm run lint
 
+      - name: Type check (tsc)
+        working-directory: portfolio-v2
+        run: npx tsc --noEmit
+
       - name: Build
         working-directory: portfolio-v2
         run: npm run build
