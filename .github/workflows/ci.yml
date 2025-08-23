@@ -23,40 +23,19 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: |
-          if [ -d "portfolio-v2" ]; then
-            cd portfolio-v2
-          fi
-          npm ci
+        run: npm ci
 
-      - name: Run linter (use ESLint CLI to avoid inheriting root config)
-        run: |
-          if [ -d "portfolio-v2" ]; then
-            cd portfolio-v2
-          fi
-          # Use the ESLint CLI directly so the config resolved is the one in portfolio-v2,
-          # avoiding accidental loading of a root-level .eslintrc.json from the repo root.
-          npx eslint "src/**/*.{js,jsx,ts,tsx}"
+      - name: Run linter
+        run: npm run lint
 
       - name: Type check (tsc)
-        run: |
-          if [ -d "portfolio-v2" ]; then
-            cd portfolio-v2
-          fi
-          npx tsc --noEmit
+        run: npx tsc --noEmit
 
       - name: Build
-        run: |
-          if [ -d "portfolio-v2" ]; then
-            cd portfolio-v2
-          fi
-          npm run build
+        run: npm run build
 
       - name: Start app for smoke test
         run: |
-          if [ -d "portfolio-v2" ]; then
-            cd portfolio-v2
-          fi
           npm run start & 
           pid=$!
           for i in {1..15}; do
