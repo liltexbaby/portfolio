@@ -109,7 +109,7 @@ export default function PublicBallot() {
 
         <div className="mb-12">
           <h2 className="text-xl font-bold mb-8 title">
-            This started out as my class project, originally called ourvote. Here's a deck outlining the app's entire proposed functionality.
+            This started out as my class project, originally called ourvote. Here&apos;s a deck outlining the app&apos;s entire proposed functionality.
           </h2>
           
           <div className="space-y-8">
@@ -129,7 +129,7 @@ export default function PublicBallot() {
 
         <div className="mb-12">
           <h2 className="text-xl font-bold mb-8 title">
-            I'm very proud that this project became a real usable product! I really do love this one. Check out my other two projects on display, I think they're just as cool:
+            I&apos;m very proud that this project became a real usable product! I really do love this one. Check out my other two projects on display, I think they&apos;re just as cool:
           </h2>
           
           <div className="grid md:grid-cols-2 gap-5">

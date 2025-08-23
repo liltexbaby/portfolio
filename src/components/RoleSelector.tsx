@@ -1,8 +1,9 @@
 'use client';
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 interface RoleSelectorProps {
   currentMode: number;
-  changeMode: (mode: number) => void;
+  changeMode: (_mode: number) => void;
 }
 
 export default function RoleSelector({ currentMode, changeMode }: RoleSelectorProps) {

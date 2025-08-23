@@ -70,7 +70,7 @@ export default function TexasCentral() {
               Prospective branding for Texas Central, a proposed high speed rail system connecting DFW, Austin, and Houston.
             </p>
             <p>
-              This project focused on creating a modern, forward-thinking identity that would represent the future of transportation in Texas while honoring the state's heritage and connecting its major metropolitan areas.
+              This project focused on creating a modern, forward-thinking identity that would represent the future of transportation in Texas while honoring the state&apos;s heritage and connecting its major metropolitan areas.
             </p>
           </div>
         </div>

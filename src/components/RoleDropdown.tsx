@@ -3,9 +3,10 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 interface RoleDropdownProps {
   currentMode: number;
-  changeMode: (mode: number) => void;
+  changeMode: (_mode: number) => void;
 }
 
 const roles = {
@@ -41,16 +42,16 @@ export default function RoleDropdown({ currentMode, changeMode }: RoleDropdownPr
 
       {isOpen && (
         <div className="absolute top-full left-0 mt-0 bg-white z-10 overflow-hidden">
-          {Object.entries(roles).map(([mode, role]) => (
+          {Object.entries(roles).map(([m, role]) => (
             <button
-              key={mode}
-              onClick={() => handleRoleChange(Number(mode))}
+              key={m}
+              onClick={() => handleRoleChange(Number(m))}
               className={`block w-full px-2.5 py-2.5 text-left bg-magenta border border-black border-transparent hover:bg-purple-400 hover:border-black hover:border-solid transition-colors duration-150 ${
-                Number(mode) === currentMode ? 'bg-purple-400' : ''
+                Number(m) === currentMode ? 'bg-purple-400' : ''
               }`}
               style={{
                 backgroundColor: 'magenta',
-                borderWidth: Number(mode) === currentMode ? '3px' : '0px',
+                borderWidth: Number(m) === currentMode ? '3px' : '0px',
                 borderColor: 'black',
                 borderStyle: 'solid'
               }}

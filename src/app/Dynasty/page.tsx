@@ -72,7 +72,7 @@ export default function Dynasty() {
               A new identity system for Dynasty, a manufacturer of percussion instruments for the top competitive drum ensembles across the world.
             </p>
             <p>
-              This rebrand focused on creating a bold, modern identity that reflects the precision and excellence of Dynasty's instruments while appealing to the competitive marching arts community.
+              This rebrand focused on creating a bold, modern identity that reflects the precision and excellence of Dynasty&apos;s instruments while appealing to the competitive marching arts community.
             </p>
           </div>
         </div>
