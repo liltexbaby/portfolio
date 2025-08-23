@@ -23,15 +23,19 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
+        working-directory: portfolio-v2
         run: npm ci
 
       - name: Run linter
+        working-directory: portfolio-v2
         run: npm run lint
 
       - name: Build
+        working-directory: portfolio-v2
         run: npm run build
 
       - name: Start app for smoke test
+        working-directory: portfolio-v2
         run: |
           npm run start & 
           pid=$!
