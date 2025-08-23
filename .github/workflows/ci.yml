@@ -31,6 +31,24 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Start app for smoke test
+        run: |
+          npm run start & 
+          pid=$!
+          for i in {1..15}; do
+            sleep 1
+            if curl -sSf http://localhost:3000/ > /dev/null; then
+              echo "Smoke test passed"
+              break
+            fi
+            if [ $i -eq 15 ]; then
+              echo "Smoke test failed: app did not respond"
+              kill $pid || true
+              exit 1
+            fi
+          done
+          kill $pid || true
+
       - name: Upload build artifact
         if: ${{ success() }}
         uses: actions/upload-artifact@v4

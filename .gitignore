@@ -39,3 +39,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Editor / OS
+.vscode/
+.idea/
+
+# Adobe Premiere auto-save and project files
+**/Adobe Premiere Pro Auto-Save/
+public/img/Adobe Premiere Pro Auto-Save/
+*.prproj
+
+# Media notes
+# Consider moving large media (videos) to external storage or a CDN rather than keeping very large binary files in the repo.
