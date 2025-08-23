@@ -79,7 +79,7 @@ export default function Home() {
       <main className="w-full">
         {/* Intro Section */}
         <div className="max-w-[75%] mx-auto pt-8 pb-3">
-          <div className="text-xl md:text-2xl font-bold leading-relaxed flex flex-col xl:flex-row text-center justify-center items-center title mr-2">
+          <div className="text-xl md:text-2xl font-bold leading-relaxed flex flex-col xl:flex-row text-left justify-start items-start title mr-2">
             My name is Jonathan Pinto and I&apos;m a{' '}
             <span className="ml-2">
               <RoleSelector currentMode={indexMode} changeMode={handleModeChange} />

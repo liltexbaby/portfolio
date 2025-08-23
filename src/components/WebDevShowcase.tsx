@@ -63,8 +63,8 @@ export default function WebDevShowcase() {
 
   return (
     <div className="w-full max-w-[75%] mx-auto px-0">
-      <div className="mb-12 space-y-4 flex justify-center">
-        <div className="leading-relaxed font-system text-lg text-center ">
+      <div className="mb-12 space-y-4 flex justify-start items-start">
+        <div className="leading-relaxed font-system text-lg text-left">
           I pair product design with full stack development to bring ideas from conception to
           production.
         </div>
