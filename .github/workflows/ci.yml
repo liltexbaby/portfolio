@@ -23,24 +23,38 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        working-directory: portfolio-v2
-        run: npm ci
+        run: |
+          if [ -d "portfolio-v2" ]; then
+            cd portfolio-v2
+          fi
+          npm ci
 
       - name: Run linter
-        working-directory: portfolio-v2
-        run: npm run lint
+        run: |
+          if [ -d "portfolio-v2" ]; then
+            cd portfolio-v2
+          fi
+          npm run lint
 
       - name: Type check (tsc)
-        working-directory: portfolio-v2
-        run: npx tsc --noEmit
+        run: |
+          if [ -d "portfolio-v2" ]; then
+            cd portfolio-v2
+          fi
+          npx tsc --noEmit
 
       - name: Build
-        working-directory: portfolio-v2
-        run: npm run build
+        run: |
+          if [ -d "portfolio-v2" ]; then
+            cd portfolio-v2
+          fi
+          npm run build
 
       - name: Start app for smoke test
-        working-directory: portfolio-v2
         run: |
+          if [ -d "portfolio-v2" ]; then
+            cd portfolio-v2
+          fi
           npm run start & 
           pid=$!
           for i in {1..15}; do
