@@ -29,7 +29,7 @@ export default function Home() {
       // Check URL hash first
       const hash = window.location.hash;
       let initialMode = 3; // default to web developer
-      
+
       if (hash === '#design') {
         initialMode = 4;
       } else if (hash === '#web') {
@@ -41,9 +41,9 @@ export default function Home() {
           initialMode = JSON.parse(data);
         }
       }
-      
+
       setIndexMode(initialMode);
-      
+
       // Set initial hash if none exists
       if (!hash) {
         const initialHash = initialMode === 3 ? '#web' : '#design';
@@ -80,20 +80,15 @@ export default function Home() {
         {/* Intro Section */}
         <div className="max-w-[75%] mx-auto pt-8 pb-3">
           <div className="text-xl md:text-2xl font-bold leading-relaxed flex flex-col xl:flex-row text-center justify-center items-center title mr-2">
-            My name is Jonathan Pinto and I&apos;m a {' '}
+            My name is Jonathan Pinto and I&apos;m a{' '}
             <span className="ml-2">
-              <RoleSelector 
-                currentMode={indexMode} 
-                changeMode={handleModeChange} 
-              />
+              <RoleSelector currentMode={indexMode} changeMode={handleModeChange} />
             </span>
           </div>
         </div>
 
         {/* Showcase Section */}
-        <div className="pt-8">
-          {handleShowcaseMode()}
-        </div>
+        <div className="pt-8">{handleShowcaseMode()}</div>
       </main>
     </div>
   );

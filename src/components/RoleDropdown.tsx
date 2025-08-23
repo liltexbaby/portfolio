@@ -3,10 +3,9 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
 interface RoleDropdownProps {
   currentMode: number;
-  changeMode: (_mode: number) => void;
+  changeMode: (mode: number) => void;
 }
 
 const roles = {
@@ -31,12 +30,7 @@ export default function RoleDropdown({ currentMode, changeMode }: RoleDropdownPr
       >
         <span className="font-bold">{roles[currentMode as keyof typeof roles]}</span>
         <div className="ml-2">
-          <Image 
-            src="/img/downArrow.png" 
-            alt="dropdown arrow" 
-            width={10} 
-            height={10}
-          />
+          <Image src="/img/downArrow.png" alt="dropdown arrow" width={10} height={10} />
         </div>
       </button>
 
@@ -53,7 +47,7 @@ export default function RoleDropdown({ currentMode, changeMode }: RoleDropdownPr
                 backgroundColor: 'magenta',
                 borderWidth: Number(m) === currentMode ? '3px' : '0px',
                 borderColor: 'black',
-                borderStyle: 'solid'
+                borderStyle: 'solid',
               }}
             >
               {role}

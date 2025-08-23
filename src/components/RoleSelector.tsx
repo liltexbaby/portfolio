@@ -1,19 +1,17 @@
 'use client';
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
 interface RoleSelectorProps {
   currentMode: number;
-  changeMode: (_mode: number) => void;
+  changeMode: (mode: number) => void;
 }
 
 export default function RoleSelector({ currentMode, changeMode }: RoleSelectorProps) {
   return (
     <span className="inline-flex items-center">
-      
       <button
         onClick={() => changeMode(3)}
         className="underline underline-offset-2 decoration-2 transition-colors duration-200 px-1 text-black hover:text-black"
-        style={{ 
+        style={{
           backgroundColor: currentMode === 3 ? '#ff00ff' : 'transparent',
         }}
         onMouseEnter={(e) => {
@@ -29,11 +27,11 @@ export default function RoleSelector({ currentMode, changeMode }: RoleSelectorPr
       >
         web developer
       </button>
-      <span className="text-black px-2">{' '}and{' '}</span>
+      <span className="text-black px-2"> and </span>
       <button
         onClick={() => changeMode(4)}
         className="underline underline-offset-2 decoration-2 transition-colors duration-200 px-1 text-black hover:text-black"
-        style={{ 
+        style={{
           backgroundColor: currentMode === 4 ? '#ff00ff' : 'transparent',
         }}
         onMouseEnter={(e) => {

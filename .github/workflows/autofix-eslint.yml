@@ -32,9 +32,9 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: apply ESLint --fix (autofix)"
-          branch: "chore/autofix-${{ github.run_id }}"
-          title: "chore: apply ESLint --fix (autofix)"
+          commit-message: 'chore: apply ESLint --fix (autofix)'
+          branch: 'chore/autofix-${{ github.run_id }}'
+          title: 'chore: apply ESLint --fix (autofix)'
           body: |
             This pull request contains fixes applied automatically by running
             `eslint --fix` in the portfolio-v2 subproject. Review and merge if acceptable.

@@ -8,14 +8,26 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'system': ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif'],
+        system: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Oxygen',
+          'Ubuntu',
+          'Cantarell',
+          'Fira Sans',
+          'Droid Sans',
+          'Helvetica Neue',
+          'sans-serif',
+        ],
         'mono-custom': ['Necto-Mono', 'monospace'],
         'serif-custom': ['Porpora-Regular', 'serif'],
       },
       colors: {
-        'magenta': '#ff00ff',
+        magenta: '#ff00ff',
       },
     },
   },
   plugins: [],
-}
+};

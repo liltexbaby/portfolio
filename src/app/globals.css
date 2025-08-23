@@ -1,9 +1,19 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Custom font utilities - Tailwind v4 compatible */
 .font-system {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif !important;
 }
 
 .font-mono-custom {
@@ -16,15 +26,17 @@
 
 /* Custom font faces */
 @font-face {
-  font-family: "Necto-Mono";
-  src: url("/fonts/Necto-Mono.woff2") format("woff2"),
-       url("/fonts/Necto-Mono.woff") format("woff");
+  font-family: 'Necto-Mono';
+  src:
+    url('/fonts/Necto-Mono.woff2') format('woff2'),
+    url('/fonts/Necto-Mono.woff') format('woff');
 }
 
 @font-face {
-  font-family: "Porpora-Regular";
-  src: url("/fonts/Porpora-Regular.woff2") format("woff2"),
-       url("/fonts/Porpora-Regular.woff") format("woff");
+  font-family: 'Porpora-Regular';
+  src:
+    url('/fonts/Porpora-Regular.woff2') format('woff2'),
+    url('/fonts/Porpora-Regular.woff') format('woff');
 }
 
 :root {
@@ -70,22 +82,52 @@ video {
 }
 
 .project-card-description h3 {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
   margin: 0 0 16px 0;
   font-weight: bold;
 }
 
 .name-title {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif !important;
   margin: 0 0 16px 0;
   font-weight: 900 !important;
 }
 
 .navbar-title {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif !important;
   font-weight: 900 !important;
 }
 
@@ -129,21 +171,51 @@ a:hover {
 
 /* Sans-serif text utility */
 .sans-serif {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif !important;
 }
 
 /* Sans-serif subtitle utility */
 .subtitle {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif !important;
   font-weight: 600;
 }
 
 /* Sans-serif body text utility */
 .body-sans {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif !important;
   font-weight: 400;
 }
 
