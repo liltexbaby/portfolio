@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+/* Custom font utilities - Tailwind v4 compatible */
+.font-system {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+}
+
+.font-mono-custom {
+  font-family: Necto-Mono, monospace !important;
+}
+
+.font-serif-custom {
+  font-family: Porpora-Regular, serif !important;
+}
+
+/* Custom font faces */
+@font-face {
+  font-family: "Necto-Mono";
+  src: url("/fonts/Necto-Mono.woff2") format("woff2"),
+       url("/fonts/Necto-Mono.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Porpora-Regular";
+  src: url("/fonts/Porpora-Regular.woff2") format("woff2"),
+       url("/fonts/Porpora-Regular.woff") format("woff");
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Necto-Mono, monospace;
+  font-size: 10pt;
+  background: white;
+  color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+video {
+  max-width: 100%;
+}
+
+/* Custom project card styling to match original */
+.project-card-description {
+  padding: 20px;
+  height: 300px;
+  margin-top: -2px;
+  background: white;
+}
+
+.project-card-description h3 {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  margin: 0 0 16px 0;
+  font-weight: bold;
+}
+
+.name-title {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+  margin: 0 0 16px 0;
+  font-weight: 900 !important;
+}
+
+.navbar-title {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+  font-weight: 900 !important;
+}
+
+/* Hover effects */
+a:hover {
+  background-color: magenta;
+}
+
+.underline-link {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+  width: 10px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: magenta !important;
+  border-radius: 0px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: black !important;
+  border-radius: 0px !important;
+}
+
+/* Title styling */
+.title {
+  font-weight: 900;
+}
+
+/* Sans-serif text utility */
+.sans-serif {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+}
+
+/* Sans-serif subtitle utility */
+.subtitle {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+  font-weight: 600;
+}
+
+/* Sans-serif body text utility */
+.body-sans {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+  font-weight: 400;
+}
+
+/* Responsive video styling */
+.responsive-video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
