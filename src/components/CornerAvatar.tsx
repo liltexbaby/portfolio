@@ -6,12 +6,16 @@ import Smiley from './Smiley';
 
 interface CornerAvatarProps {
   onClick?: () => void;
+  isActive?: boolean;
 }
 
-export default function CornerAvatar({ onClick }: CornerAvatarProps) {
+export default function CornerAvatar({ onClick, isActive }: CornerAvatarProps) {
   return (
     <div
-      className="w-12 h-12 cursor-pointer hover:bg-magenta transition-colors duration-200 rounded"
+      className={`w-12 h-12 cursor-pointer group ${
+        isActive ? 'hover:bg-white' : 'hover:bg-magenta'
+      }`}
+      style={isActive ? { backgroundColor: '#ff00ff' } : undefined}
       onClick={onClick}
     >
       <Canvas camera={{ position: [0, 0, 5], fov: 50 }} style={{ width: '100%', height: '100%' }}>

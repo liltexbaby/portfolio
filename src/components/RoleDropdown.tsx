@@ -1,7 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 interface RoleDropdownProps {
   currentMode: number;
@@ -11,11 +10,15 @@ interface RoleDropdownProps {
 const roles = {
   3: 'web developer',
   4: 'graphic designer',
-  // Removed fine artist and print seller as requested
 };
 
 export default function RoleDropdown({ currentMode, changeMode }: RoleDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleRoleChange = (mode: number) => {
     changeMode(mode);
@@ -23,38 +26,55 @@ export default function RoleDropdown({ currentMode, changeMode }: RoleDropdownPr
   };
 
   return (
-    <div className="relative inline-block ml-2">
+    <div className="relative inline-block">
+      {/* Trigger button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center underline-link cursor-pointer hover:bg-purple-400 transition-colors duration-200 px-1"
+        className="inline-flex items-center gap-2 cursor-pointer px-1 text-black"
+        style={{ backgroundColor: '#ff00ff' }}
       >
-        <span className="font-bold">{roles[currentMode as keyof typeof roles]}</span>
-        <div className="ml-2">
-          <Image src="/img/downArrow.png" alt="dropdown arrow" width={10} height={10} />
-        </div>
+        <span className="underline underline-offset-2 decoration-2">
+          {roles[currentMode as keyof typeof roles]}
+        </span>
+        <span
+          className="inline-block transition-transform duration-300 ease-in-out text-base leading-none"
+          style={{
+            textDecoration: 'none',
+            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+          }}
+        >
+          ▾
+        </span>
       </button>
 
-      {isOpen && (
-        <div className="absolute top-full left-0 mt-0 bg-white z-10 overflow-hidden">
+      {/* Clip wrapper — hides the panel when translated up */}
+      <div className="absolute left-0 top-full z-10 overflow-hidden w-max">
+        <div
+          className={`${mounted ? 'transition-transform duration-500 ease-in-out' : ''} ${
+            isOpen ? 'translate-y-0' : '-translate-y-full'
+          }`}
+        >
           {Object.entries(roles).map(([m, role]) => (
             <button
               key={m}
               onClick={() => handleRoleChange(Number(m))}
-              className={`block w-full px-2.5 py-2.5 text-left bg-magenta border border-black border-transparent hover:bg-purple-400 hover:border-black hover:border-solid transition-colors duration-150 ${
-                Number(m) === currentMode ? 'bg-purple-400' : ''
-              }`}
+              className="block w-full px-3 py-2.5 text-left text-black cursor-pointer"
               style={{
-                backgroundColor: 'magenta',
-                borderWidth: Number(m) === currentMode ? '3px' : '0px',
-                borderColor: 'black',
-                borderStyle: 'solid',
+                backgroundColor: Number(m) === currentMode ? '#ff00ff' : '#ff00ff',
+                borderLeft: Number(m) === currentMode ? '3px solid black' : '3px solid transparent',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.filter = 'brightness(0.92)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.filter = '';
               }}
             >
               {role}
             </button>
           ))}
         </div>
-      )}
+      </div>
     </div>
   );
 }

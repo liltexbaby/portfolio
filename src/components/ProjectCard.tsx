@@ -55,7 +55,7 @@ export default function ProjectCard({
   return (
     <div
       ref={projectRef}
-      className="transition-transform duration-250 ease-out cursor-pointer"
+      className="transition-all duration-250 ease-out cursor-pointer"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -67,7 +67,7 @@ export default function ProjectCard({
             </video>
           ) : (
             <div className={`relative w-full ${getAspectRatioClass()}`}>
-              <Image src={coverLink} alt={projectName} fill className="object-cover" />
+              <Image src={coverLink} alt={projectName} fill className="object-cover rounded-t-xl" />
             </div>
           )}
           <div className="project-card-description">

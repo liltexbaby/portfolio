@@ -10,7 +10,7 @@ export default function RoleSelector({ currentMode, changeMode }: RoleSelectorPr
     <span className="inline-flex items-center">
       <button
         onClick={() => changeMode(3)}
-        className="underline underline-offset-2 decoration-2 transition-colors duration-200 px-1 text-black hover:text-black"
+        className="cursor-pointer underline underline-offset-2 decoration-2 px-1 text-black hover:text-black"
         style={{
           backgroundColor: currentMode === 3 ? '#ff00ff' : 'transparent',
         }}
@@ -30,7 +30,7 @@ export default function RoleSelector({ currentMode, changeMode }: RoleSelectorPr
       <span className="text-black px-2"> and </span>
       <button
         onClick={() => changeMode(4)}
-        className="underline underline-offset-2 decoration-2 transition-colors duration-200 px-1 text-black hover:text-black"
+        className="cursor-pointer underline underline-offset-2 decoration-2 px-1 text-black hover:text-black"
         style={{
           backgroundColor: currentMode === 4 ? '#ff00ff' : 'transparent',
         }}

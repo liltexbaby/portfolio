@@ -61,7 +61,7 @@ export default function DesignShowcase() {
   return (
     <div className="w-full max-w-[75%] mx-auto px-0">
       <div className="mb-12 space-y-4 flex justify-start items-start">
-        <div className="font-system leading-relaxed text-left">
+        <div className="leading-relaxed font-system text-lg text-left">
           I have a passion for creating bold and unique branding that is striking and systematic.
         </div>
       </div>

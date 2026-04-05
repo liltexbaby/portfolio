@@ -51,6 +51,12 @@
   --font-mono: var(--font-geist-mono);
 }
 
+html {
+  background: white;
+  /* Prevent iOS/Android rubber-band overscroll from exposing elements above the viewport */
+  overscroll-behavior-y: none;
+}
+
 html,
 body {
   padding: 0;

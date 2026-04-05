@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import RoleSelector from '@/components/RoleSelector';
+import RoleDropdown from '@/components/RoleDropdown';
 import WebDevShowcase from '@/components/WebDevShowcase';
 import DesignShowcase from '@/components/DesignShowcase';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   const [indexMode, setIndexMode] = useState(3); // Default to web developer
@@ -80,16 +82,21 @@ export default function Home() {
         {/* Intro Section */}
         <div className="max-w-[75%] mx-auto pt-8 pb-3">
           <div className="text-xl md:text-2xl font-bold leading-relaxed flex flex-col xl:flex-row text-left justify-start items-start title mr-2">
-            My name is Jonathan Pinto and I&apos;m a{' '}
-            <span className="ml-2">
+            <span>My name is Jonathan Pinto and I&apos;m a</span>
+            <span className="ml-0 mt-2 md:mt-0 md:ml-2 hidden md:inline-flex">
               <RoleSelector currentMode={indexMode} changeMode={handleModeChange} />
+            </span>
+            <span className="ml-0 mt-2 md:hidden">
+              <RoleDropdown currentMode={indexMode} changeMode={handleModeChange} />
             </span>
           </div>
         </div>
 
         {/* Showcase Section */}
-        <div className="pt-8">{handleShowcaseMode()}</div>
+        <div className="pt-2">{handleShowcaseMode()}</div>
       </main>
+
+      <Footer />
     </div>
   );
 }
