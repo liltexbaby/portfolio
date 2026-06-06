@@ -25,6 +25,34 @@ const otherProjects = [
   },
 ];
 
+const slides = [
+  {
+    src: '/img/SaturnVHome.mp4',
+    caption: 'The home page leading to our three main pathways',
+  },
+  {
+    src: '/img/SaturnVHIstory.mp4',
+    caption: 'Our main page about the history of the rocket',
+  },
+  {
+    src: '/img/SaturnVLoops.mp4',
+    caption: 'Diagrams depicting the different flight paths of the rocket',
+  },
+  {
+    src: '/img/SaturnVRocket.mp4',
+    caption:
+      'The Science page features an interactive schematic of the rocket detailing its various components',
+  },
+  {
+    src: '/img/SaturnVPeople.mp4',
+    caption: 'The People page highlighting key contributors to the Apollo program',
+  },
+  {
+    src: '/img/SaturnVMoon.mp4',
+    caption: 'The Moon landing section documenting the mission and its legacy',
+  },
+];
+
 export default function SaturnV() {
   const introRef = useRef<HTMLDivElement>(null);
 
@@ -80,51 +108,44 @@ export default function SaturnV() {
             <div className="border-2 border-black p-5 bg-white">
               <h3 className="text-base font-bold mb-4">Role:</h3>
               <p className="mb-4">
-                I was responsible for the complete design and development of this interactive
-                website, including custom animations, video integration, and responsive design.
+                I was the information architect and technical lead on this project, designing the
+                data structure and site organization, using WordPress and After Effects to bring my{' '}
+                {"team's"} illustrations and information to life with animation and interactive
+                content.
               </p>
 
               <h3 className="text-base font-bold mb-4">Technologies/Skills:</h3>
               <ul className="list-disc list-inside space-y-1">
-                <li>WordPress & WPBakery Page Builder</li>
+                <li>WordPress &amp; WPBakery Page Builder</li>
                 <li>Custom CSS animations</li>
-                <li>After Effects video production</li>
+                <li>After Effects / HTML5 SVG Animation</li>
                 <li>Responsive web design</li>
-                <li>Interactive storytelling</li>
+                <li>Working with a team</li>
               </ul>
             </div>
           </div>
         </div>
 
+        {/* Hero video */}
+        <div className="mb-12">
+          <div className="relative aspect-video mb-8">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="responsive-video w-full h-full object-cover"
+            >
+              <source src="/img/SaturnVHero.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        {/* All slide videos */}
         <div className="mb-12">
           <h2 className="text-xl font-bold mb-8 title">Project Features</h2>
 
-          <div className="grid md:grid-cols-2 gap-5 mb-8">
-            <div className="relative aspect-video">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="responsive-video w-full h-full object-cover"
-              >
-                <source src="/img/SaturnVHero.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div className="relative aspect-video">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="responsive-video w-full h-full object-cover"
-              >
-                <source src="/img/SaturnVRocket.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </div>
-
-          <div className="space-y-6 text-base">
+          <div className="space-y-6 text-base mb-8">
             <p>
               The website features immersive video backgrounds, smooth scrolling animations, and
               interactive elements that guide users through the history of the Saturn V rocket and
@@ -134,6 +155,27 @@ export default function SaturnV() {
               Each section was carefully crafted to provide both educational content and visual
               appeal, making complex space technology accessible to a general audience.
             </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-5">
+            {slides.map((slide, i) => (
+              <div key={i} className="flex flex-col gap-2">
+                <div className="relative aspect-video">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="responsive-video w-full h-full object-cover"
+                  >
+                    <source src={slide.src} type="video/mp4" />
+                  </video>
+                </div>
+                {slide.caption && (
+                  <p className="text-sm text-gray-600 leading-snug">{slide.caption}</p>
+                )}
+              </div>
+            ))}
           </div>
         </div>
 
