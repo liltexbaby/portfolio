@@ -14,7 +14,8 @@ import type { NextConfig } from 'next';
  *                                → Google Fonts actual font files
  *  - img-src 'self' data: blob:  → local images, inline data URIs, canvas blobs
  *  - media-src 'self'            → local <video>/<audio> files
- *  - connect-src 'self'          → fetch/XHR only to your own origin
+ *  - connect-src 'self' blob:    → fetch/XHR to own origin + blob URLs (Three.js GLTFLoader)
+ *  - worker-src 'self' blob:     → allow blob: workers (Three.js may spawn workers)
  *  - frame-ancestors 'none'      → disallow iframing your site (clickjacking defence)
  *  - object-src 'none'           → block Flash / old plugins
  *  - base-uri 'self'             → prevent <base> tag hijacking
@@ -31,7 +32,8 @@ const securityHeaders = [
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob:",
       "media-src 'self'",
-      "connect-src 'self'",
+      "connect-src 'self' blob:",
+      "worker-src 'self' blob:",
       "frame-ancestors 'none'",
       "object-src 'none'",
       "base-uri 'self'",
